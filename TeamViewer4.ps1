@@ -2,11 +2,13 @@
 if (Test-Path "C:\Program Files (x86)\TeamViewer\TeamViewer.exe") {
     Write-Host "TeamViewer is installed in the standard directory. Opening..."
     Start-Process "C:\Program Files (x86)\TeamViewer\TeamViewer.exe"
+    exit  # Exit the script after opening TeamViewer
 }
 # Check if TeamViewer is installed in the "Program Files" directory
 elseif (Test-Path "C:\Program Files\TeamViewer\TeamViewer.exe") {
     Write-Host "TeamViewer is installed in the 'Program Files' directory. Opening..."
     Start-Process "C:\Program Files\TeamViewer\TeamViewer.exe"
+    exit  # Exit the script after opening TeamViewer
 }
 else {
     # TeamViewer is not installed, so install it
@@ -24,11 +26,8 @@ else {
     
     # Open TeamViewer
     Start-Process "C:\Program Files (x86)\TeamViewer\TeamViewer.exe"
+    exit  # Exit the script after opening TeamViewer
 }
 
-# Wait for TeamViewer to open
-Write-Host "Waiting for TeamViewer to open..."
-Start-Sleep -Seconds 10  # Adjust the sleep duration as needed
-
-# Script ends
+# The script should not reach this point
 Write-Host "Script completed."
