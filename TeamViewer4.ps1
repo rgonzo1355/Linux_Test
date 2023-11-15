@@ -1,7 +1,12 @@
-# Check if TeamViewer is installed
+# Check if TeamViewer is installed in the standard directory
 if (Test-Path "C:\Program Files (x86)\TeamViewer\TeamViewer.exe") {
-    Write-Host "TeamViewer is already installed. Opening..."
+    Write-Host "TeamViewer is installed in the standard directory. Opening..."
     Start-Process "C:\Program Files (x86)\TeamViewer\TeamViewer.exe"
+}
+# Check if TeamViewer is installed in the "Program Files" directory
+elseif (Test-Path "C:\Program Files\TeamViewer\TeamViewer.exe") {
+    Write-Host "TeamViewer is installed in the 'Program Files' directory. Opening..."
+    Start-Process "C:\Program Files\TeamViewer\TeamViewer.exe"
 }
 else {
     # TeamViewer is not installed, so install it
