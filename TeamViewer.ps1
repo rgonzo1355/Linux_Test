@@ -22,3 +22,6 @@ if (!$teamViewerInstalled) {
 
 # Start TeamViewer
 Start-Process -FilePath 'C:\Program Files\TeamViewer\TeamViewer.exe' -Wait
+
+# Pause the script
+pause
